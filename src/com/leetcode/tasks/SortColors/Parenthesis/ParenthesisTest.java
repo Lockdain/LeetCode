@@ -18,5 +18,6 @@ class ParenthesisTest {
         assertFalse( Parenthesis.isBalanced("]]"));
         assertFalse( Parenthesis.isBalanced("((}]"));
         assertFalse( Parenthesis.isBalanced("(((]]]]"));
+        assertFalse( Parenthesis.isBalanced("(((]}{]]]"));
     }
 }
