@@ -1,4 +1,4 @@
-package com.leetcode.tasks.SortColors.Parenthesis;
+package com.leetcode.parenthesisbalancing;
 
 import static org.junit.jupiter.api.Assertions.*;
 

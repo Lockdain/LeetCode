@@ -1,4 +1,4 @@
-package com.leetcode.task.JewelsInStones;
+package com.leetcode.jewelsinstones;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.leetcode.tasks.SortColors.Parenthesis;
+package com.leetcode.parenthesisbalancing;
 
 import java.util.ArrayDeque;
 import java.util.Objects;
