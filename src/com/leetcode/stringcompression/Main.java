@@ -56,7 +56,6 @@ public class Main {
         char cur = chars[0];
         // для хранения предыдущего символа
         char prevCur = chars[0];
-        int firstFindIndex = 0;
         int curCounter = 1;
         int printed = 0;
         // счетчик
@@ -116,7 +115,6 @@ public class Main {
             // смещаем указатель
             j++;
         }
-        System.out.println(chars);
         return printed;
     }
 
