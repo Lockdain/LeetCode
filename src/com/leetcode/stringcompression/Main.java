@@ -54,6 +54,8 @@ package com.leetcode.stringcompression;
 public class Main {
     public static int compress(char[] chars) {
         char cur = chars[0];
+        // для хранения предыдущего символа
+        char prevCur = chars[0];
         int firstFindIndex = 0;
         int curCounter = 1;
         int printed = 0;
@@ -66,7 +68,7 @@ public class Main {
 
         while (true) {
             // если проверили все элементы - можно выходить
-            if (j >= chars.length - 1) {
+            if (j > chars.length - 1) {
                 break;
             }
             // "обнуляем" счетчик количества вхождений
@@ -79,10 +81,17 @@ public class Main {
             }
             // запоминаем новый элемент
             if (j + 1 < chars.length) {
+                prevCur = cur;
                 cur = chars[j + 1];
             }
 
+            // проверяем последний элемент
+            if (j + 1 == chars.length) {
+                prevCur = cur;
+            }
+
             if (curCounter < 10 && curCounter > 1) {
+                chars[printed] = prevCur;
                 // символ встречается меньше 10 раз, но больше 1
                 chars[++printed] = String.valueOf(curCounter).charAt(0);
                 // запоминаем указатель последней записи количества
@@ -91,10 +100,12 @@ public class Main {
 
             // найдено только одно вхождение
             if (curCounter == 1) {
+                chars[printed] = prevCur;
                 printed++;
             }
 
-            if (curCounter > 10) {
+            if (curCounter >= 10) {
+                chars[printed] = prevCur;
                 for (int i = 0; i < String.valueOf(curCounter).length(); i++) {
                     chars[++printed] = String.valueOf(curCounter).charAt(i);
                 }
@@ -110,7 +121,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        char[] array = {'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'};
+       // char[] array = {'a', 'b', 'b', 'b', 'b', 'b', 'a', 'a', 'a', 'b', 'b', 'b', 'b'};
+      //  char[] array = {'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'};
+       // char[] array = {'a', 'b', 'c'};
+        char[] array = {'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'};
         System.out.println(compress(array));
         //compress(array);
     }
