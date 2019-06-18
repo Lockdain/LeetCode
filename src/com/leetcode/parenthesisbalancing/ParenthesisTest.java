@@ -1,6 +1,7 @@
 package com.leetcode.parenthesisbalancing;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 class ParenthesisTest {
 
