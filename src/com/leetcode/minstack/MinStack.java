@@ -10,7 +10,7 @@ import java.util.ArrayDeque;
  * pop() -- Removes the element on top of the stack.
  * top() -- Get the top element.
  * getMin() -- Retrieve the minimum element in the stack.
- *
+ * <p>
  * Example:
  * MinStack minStack = new MinStack();
  * minStack.push(-2);
@@ -31,7 +31,6 @@ public class MinStack {
      * initialize your data structure here.
      */
     MinStack() {
-
     }
 
     public void push(int x) {
